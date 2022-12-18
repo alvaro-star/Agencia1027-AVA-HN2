@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package services;
 
 import dao.ConexaoBanco;
@@ -11,10 +7,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import models.ContaModel;
 
-/**
- *
- * @author alvaro
- */
 public class ContaService {
 
     public ArrayList<ContaModel> getAll() throws SQLException {
