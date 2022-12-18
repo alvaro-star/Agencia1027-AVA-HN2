@@ -32,6 +32,7 @@ public class Principal extends javax.swing.JFrame {
         JBRemover_Conta = new javax.swing.JButton();
         JBMostrar_Contas = new javax.swing.JButton();
         JBCriar_Conta1 = new javax.swing.JButton();
+        jBMostrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Agência 1027");
@@ -77,6 +78,13 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        jBMostrar.setText("Mostrar Conta");
+        jBMostrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBMostrarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jpDesktopLayout = new javax.swing.GroupLayout(jpDesktop);
         jpDesktop.setLayout(jpDesktopLayout);
         jpDesktopLayout.setHorizontalGroup(
@@ -90,6 +98,8 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(JBAlterar_Conta)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(JBRemover_Conta)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jBMostrar)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 618, Short.MAX_VALUE)
         );
@@ -101,7 +111,8 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(JBMostrar_Contas)
                     .addComponent(JBAlterar_Conta)
                     .addComponent(JBRemover_Conta)
-                    .addComponent(JBCriar_Conta1))
+                    .addComponent(JBCriar_Conta1)
+                    .addComponent(jBMostrar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 318, Short.MAX_VALUE))
         );
@@ -165,6 +176,20 @@ public class Principal extends javax.swing.JFrame {
         formulario.setVisible(true);
     }//GEN-LAST:event_JBCriar_Conta1ActionPerformed
 
+    private void jBMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBMostrarActionPerformed
+        DefaultTableModel tabelaConta = (DefaultTableModel) jTableConta.getModel();
+
+        int rowSelected = jTableConta.getSelectedRow();
+        if (rowSelected >= 0) {
+            String numeroConta = tabelaConta.getValueAt(rowSelected, 0).toString();
+            ShowCliente formularioEdit = new ShowCliente(numeroConta);
+            jpDesktop.add(formularioEdit, getComponentZOrder(this) + 1);
+            formularioEdit.setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(this, "Selecione uma linha primeiro");
+        }
+    }//GEN-LAST:event_jBMostrarActionPerformed
+
     private void loadTable() {
         DefaultTableModel tabelaConta = (DefaultTableModel) jTableConta.getModel();
         try {
@@ -227,6 +252,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton JBCriar_Conta1;
     private javax.swing.JButton JBMostrar_Contas;
     private javax.swing.JButton JBRemover_Conta;
+    private javax.swing.JButton jBMostrar;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTableConta;
     private javax.swing.JPanel jpDesktop;

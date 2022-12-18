@@ -54,6 +54,8 @@
                   <Component id="JBAlterar_Conta" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="JBRemover_Conta" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jBMostrar" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
               <Component id="jScrollPane1" alignment="1" pref="618" max="32767" attributes="0"/>
@@ -68,6 +70,7 @@
                       <Component id="JBAlterar_Conta" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="JBRemover_Conta" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="JBCriar_Conta1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jBMostrar" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jScrollPane1" pref="318" max="32767" attributes="0"/>
@@ -131,6 +134,14 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JBCriar_Conta1ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jBMostrar">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Mostrar Conta"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBMostrarActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

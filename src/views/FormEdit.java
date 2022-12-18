@@ -20,7 +20,6 @@ public class FormEdit extends javax.swing.JInternalFrame {
 
     public FormEdit(String numeroConta) {
         initComponents();
-        System.out.println(numeroConta);
         try {
             ContaModel conta = ContaControle.getOne(numeroConta);
             jLTitle.setText("Editar a conta "+ numeroConta);
